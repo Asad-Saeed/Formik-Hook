@@ -8,6 +8,11 @@ const initialValues = {
   name: "",
   email: "",
   channel: "",
+  social: {
+    facebook: '',
+    twitter: '',
+  },
+  phoneNumbers:["",""]
 };
 // OnSubmit Function
 const onSubmit = (values) => {
@@ -73,6 +78,15 @@ const YupForm = () => {
           <label htmlFor="channel">Channel Name:</label>
           <Field name="channel" type="text" id='channel'/>
           <ErrorMessage  name="channel" />
+          <label htmlFor="social">Social Accounts Nested object:</label>
+          <Field name="social.facebook" type="text" id="social"/>
+          <br/>
+          <Field name="social.twitter" type="text" id="social"/>
+
+          <label htmlFor="phoneNumbers">Phone Number Array:</label>
+          <Field name="phoneNumbers[0]" type="text" id="phoneNumbers"/>
+          <br/>
+          <Field name="phoneNumbers[1]" type="text" id="phoneNumbers"/>
           <br/>
           <button type="submit">Submit</button>
         </Form>
